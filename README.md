@@ -1,22 +1,18 @@
 # Project-1018
-Hi this is a DEV branch
-Team members:
-Chris Chen
-Kanika Agarwal
-Weber Meng
+Electricity markets allow economically-efficient buying of selling of electricity. They are based on
+3 the physical electric power grid, a complex interconnected network of generators, transmission lines,
+4 and consumers.
+5 Our goals are to: 1) understand the dynamics of electricity market data (demand, supply and
+6 imbalance) and 2) forecast their future values at different forecasting scales (short-term/long-term).
+7 Electrical system load is the amount of electricity used or consumed within an area, and represents
+8 demand in the electricity markets. Generation fuel mix data shows the amount of generation attributed
+9 to different fuel types. Area Control Error (ACE) measures the error in the balance between load and
+10 generation, or in other words, the amount of excess load or supply.
 
-CC_ACE_Analysis:
-1. CC_ACE_Preprocessing_time_gaps_nans_V1.ipynb: Preprocess ACE by finding NaNs and gaps
-2. CC_ACE_ARIMA.ipynb: Run an ARIMA on ACE (do preprocessing first)
-
-GenMixAnalysis:
-GenFuelMixAnalysisV1 to V3: Demonstration of proof-of-concept basic ARIMA and Kalman on Gen Fuel Mix. Use V3.
-1. CC_GenFuelMix_Kalman.ipynb: Preprocess Gen Fuel Mix. Run attempts at Kalman Filters on Gen Fuel Mix.
-GenMix_nanremoved.pkl - pickled preprocessed Gen Fuel Mix all data
-GenMix_Consolidated.pkl - pickled Gen Fuel Mix group by 5 major fuel types
-CGS_2Latent_KF.pkl - pickled pykalman Kalman Filter object for saving KF Model with 2 latents for 3 observed (Coal/Gas/Wind) model.
-I will try more Kalman Filters.
-
+We model nuclear generation data with a Hidden Markov Model HMM. We analyze hourly load data
+28 by applying ARIMA and an LSTM model. We also used walk-forward forecasting with ARIMA to
+29 explore different forecasting lengths. For ACE, we use an ARIMA model. With these time series
+30 methods, we are able to predict nuclear generation, and load and understand ACE.
 
 
 
